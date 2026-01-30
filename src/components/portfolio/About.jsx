@@ -31,7 +31,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-15 bg-[#050B1A] overflow-hidden px-20"
+      className="relative py-15 bg-[#050B1A] overflow-hidden lg:px-20"
     >
       {/* Glow Background */}
       <div className="absolute inset-0">

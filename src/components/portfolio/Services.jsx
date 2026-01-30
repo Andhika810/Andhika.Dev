@@ -24,7 +24,7 @@ const reasons = [
 
 export default function Services() {
   return (
-    <section className="py-24 relative px-20">
+    <section className="py-24 relative lg:px-20">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-gradient-to-r from-primary/10 to-accent/10 rounded-full blur-[100px]" />
       </div>
