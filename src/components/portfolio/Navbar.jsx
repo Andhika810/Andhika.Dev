@@ -4,106 +4,109 @@ import { Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
-  { name: "Skills", href: "#skills" },
-  { name: "Workflow", href: "#workflow" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", id: "home" },
+  { name: "About", id: "about" },
+  { name: "Projects", id: "projects" },
+  { name: "Skills", id: "skills" },
+  { name: "Workflow", id: "workflow" },
+  { name: "Contact", id: "contact" },
 ];
-const handleWhatsApp = () => {
-  window.open(
-    "https://wa.me/6287802102002?text=Halo,%20saya%20ingin%20menggunakan%20jasa%20website%20Anda",
-    "_blank",
-  );
-};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
+  const handleNavigate = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
+  };
+
+  const handleWhatsApp = () => {
+    window.open(
+      "https://wa.me/6287802102002?text=Halo,%20saya%20ingin%20menggunakan%20jasa%20website%20Anda",
+      "_blank",
+    );
+    setIsOpen(false);
+  };
+
   return (
     <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 glass"
+      className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md glass w-full overflow-x-hidden"
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <motion.a
-            href="#home"
-            className="text-xl font-bold text-gradient"
+          {/* LOGO BALIK KE AWAL */}
+          <motion.button
+            onClick={() => handleNavigate("home")}
+            className="text-xl font-bold text-gradient md:text-2xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             Andhika.dev
-          </motion.a>
+          </motion.button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden items-center gap-8 md:flex">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="group relative text-sm text-muted-foreground transition-colors hover:text-foreground"
+          {/* DESKTOP NAV */}
+          <div className="hidden md:flex gap-8 items-center">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavigate(item.id)}
+                className="text-sm text-muted-foreground hover:text-foreground transition"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
-              </motion.a>
+              </button>
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* DESKTOP HIRE ME RADIUS */}
           <div className="hidden md:block">
             <Button
-              asChild
               onClick={handleWhatsApp}
-              className="mt-4 w-full bg-gradient-to-r from-primary to-accent text-primary-foreground transition-opacity hover:opacity-90"
+              className="rounded-xl bg-gradient-to-r from-primary to-accent px-5 py-2 text-primary-foreground hover:opacity-90"
             >
-              <p>Hire Me</p>
+              Hire Me
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* BURGER */}
           <button
-            className="text-foreground md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            className="md:hidden"
+            onClick={() => setIsOpen((prev) => !prev)}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="glass border-t border-border md:hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="md:hidden glass border-t border-border"
           >
-            <div className="space-y-3 px-4 py-4">
+            <div className="flex flex-col gap-3 px-4 py-5">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block py-2 text-muted-foreground transition-colors hover:text-foreground"
+                <button
+                  key={item.id}
+                  onClick={() => handleNavigate(item.id)}
+                  className="w-full rounded-lg py-3 text-center text-base font-medium text-muted-foreground hover:bg-white/10 hover:text-foreground transition"
                 >
                   {item.name}
-                </a>
+                </button>
               ))}
+
+              {/* MOBILE HIRE ME RADIUS */}
               <Button
-                asChild
                 onClick={handleWhatsApp}
-                className="mt-4 w-full bg-gradient-to-r from-primary to-accent text-primary-foreground transition-opacity hover:opacity-90"
-              ></Button>
-              Hire Me
+                className="w-full rounded-xl bg-gradient-to-r from-primary to-accent py-3 text-base font-semibold text-primary-foreground hover:opacity-90"
+              >
+                Hire Me
+              </Button>
             </div>
           </motion.div>
         )}

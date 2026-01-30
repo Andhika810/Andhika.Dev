@@ -22,9 +22,8 @@ export default function Contact() {
 Halo, saya ingin konsultasi proyek pembuatan web.
 
 Nama: ${form.name}
-WhatsApp: ${form.phone}
+WhatsApp: ${form.whatsapp}
 Email: ${form.email}
-Jenis Proyek: ${form.project}
 Pesan: ${form.message}
     `;
 

@@ -1,10 +1,14 @@
 import { Github, Linkedin, Twitter, Mail, MapPin, Phone } from "lucide-react";
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
+  {
+    name: "GitHub",
+    icon: Github,
+    href: "https://github.com/Andhika810/Andhika.Dev",
+  },
   { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
   { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
-  { name: "Email", icon: Mail, href: "mailto:hello@adonia.dev" },
+  { name: "Email", icon: Mail },
 ];
 
 export default function Footer() {

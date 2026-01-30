@@ -48,7 +48,7 @@ const pricingPlans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-24 relative px-20">
+    <section id="pricing" className="py-24 relative lg:px-20">
       {/* background blur */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 w-[700px] h-[400px] -translate-x-1/2 -translate-y-1/2 bg-primary/10 rounded-full blur-[120px]" />
