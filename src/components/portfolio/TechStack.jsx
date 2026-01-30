@@ -6,6 +6,7 @@ const technologies = [
   { name: "Node.js", icon: "🟢" },
   { name: "Python", icon: "🐍" },
   { name: "Figma", icon: "🎯" },
+  { name: "Laravel", icon: "🔺" },
 ];
 
 function TechIcon({ name, icon }) {
