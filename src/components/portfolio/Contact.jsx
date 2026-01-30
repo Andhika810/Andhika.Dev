@@ -19,7 +19,7 @@ export default function Contact() {
     console.log(form);
 
     const text = `
-Halo, saya ingin konsultasi proyek pembuatan web.
+Halo, I want to use your landing page creation service.
 
 Nama: ${form.name}
 WhatsApp: ${form.whatsapp}

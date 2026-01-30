@@ -9,11 +9,10 @@ const pricingPlans = [
     glowClass: "glow-accent border border-accent/30",
     recommended: false,
     features: [
-      "1 halaman landing page",
+      "One Landing Page",
       "Responsive design",
       "Modern UI layout",
       "Fast loading",
-      "Cocok untuk UMKM & personal",
     ],
   },
   {
@@ -42,6 +41,7 @@ const pricingPlans = [
       "SEO & performance optimization",
       "Custom section & flow",
       "Business-oriented structure",
+      "Layering Pages",
     ],
   },
 ];
