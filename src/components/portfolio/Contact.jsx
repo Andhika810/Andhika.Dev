@@ -19,7 +19,7 @@ export default function Contact() {
     console.log(form);
 
     const text = `
-Halo, saya ingin konsultasi proyek aluminium.
+Halo, saya ingin konsultasi proyek pembuatan web.
 
 Nama: ${form.name}
 WhatsApp: ${form.phone}

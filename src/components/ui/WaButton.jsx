@@ -4,7 +4,7 @@ import { Button } from "../ui/Button";
 export default function WhatsAppButton() {
   const handleWhatsApp = () => {
     window.open(
-      "https://wa.me/6287802102002?text=Halo,%20saya%20tertarik%20dengan%20layanan%20pembuatan%20web%20Anda",
+      "https://wa.me/6287802102002?text=Halo,%20saya%20tertarik%20dengan%20layanan%20pembuatan%20web%20anda",
       "_blank",
     );
   };
