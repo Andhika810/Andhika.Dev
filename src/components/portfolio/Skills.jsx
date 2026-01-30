@@ -70,7 +70,7 @@ function SkillBar({ name, level, delay }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative px-20">
+    <section id="skills" className="py-24 relative lg:px-20">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px]" />
       </div>
