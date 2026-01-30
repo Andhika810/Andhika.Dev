@@ -21,10 +21,10 @@ export default function Contact() {
     const text = `
 Halo, I want to use your landing page creation service.
 
-Nama: ${form.name}
+Name: ${form.name}
 WhatsApp: ${form.whatsapp}
 Email: ${form.email}
-Pesan: ${form.message}
+Notes: ${form.message}
     `;
 
     window.open(
